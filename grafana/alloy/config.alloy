@@ -3,7 +3,7 @@ logging {
 }
 
 prometheus.exporter.unix "localhost" {
-    disable_collectors = [ "arp", "bonding", "btrfs", "conntrack", "drbd", "edac", "fibrechannel", "infiniband", "ipvs", "logind", "mountstats", "nfs", "ntp", "powersupplyclass", "rapl", "schedstat", "softirqs", "tapestats", "textfile", "timex", "zfs" ]
+    disable_collectors = [ "arp", "bonding", "btrfs", "conntrack", "drbd", "edac", "fibrechannel", "infiniband", "ipvs", "logind", "mountstats", "nfs", "ntp", "powersupplyclass", "rapl", "schedstat", "softirqs", "tapestats", "textfile",>
 }
 
 discovery.relabel "node_exporter" {
@@ -28,7 +28,7 @@ prometheus.scrape "quilibrium_exporter" {
   job_name = "quilibrium"
   targets = [{
     __address__ = "127.0.0.1:5001",
-  }]    
+  }]
   forward_to = [
       prometheus.remote_write.grafanacloud.receiver,
   ]
@@ -36,12 +36,7 @@ prometheus.scrape "quilibrium_exporter" {
 
 prometheus.remote_write "grafanacloud" {
   endpoint {
-    url = "<PROMETHEUS_ENDPOINT>"
-
-    basic_auth {
-      username = "<PROMETHEUS_USERNAME>"
-      password = "<PROMETHEUS_PASSWORD>"
-    }
+    url = "http://127.0.0.1:9091"
   }
 }
 
@@ -65,11 +60,6 @@ loki.source.journal "read" {
 
 loki.write "grafanacloud" {
   endpoint {
-    url = "<LOKI_ENDPOINT>"
-
-    basic_auth {
-      username = "<LOKI_USERNAME>"
-      password = "<LOKI_PASSWORD>"
-    }
+    url = "http://127.0.0.1:3100"
   }
 }
