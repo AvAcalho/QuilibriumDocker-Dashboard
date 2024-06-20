@@ -1,8 +1,8 @@
 {
   "__inputs": [
     {
-      "name": "DS_VICTORIAMETRICS",
-      "label": "VictoriaMetrics",
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
       "description": "",
       "type": "datasource",
       "pluginId": "prometheus",
@@ -140,7 +140,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -194,11 +194,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "count(count by (instance) ({__name__=~\".+\",job=\"integrations/quilibrium_exporter\"}))",
+          "expr": "count(count by (instance) ({__name__=~\".+\",job=\"node\"}))",
           "format": "table",
           "instant": true,
           "legendFormat": "__auto",
@@ -696,7 +696,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -746,7 +746,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -930,7 +930,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -978,7 +978,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -987,9 +987,9 @@
           "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "instant": false,
+          "instant": true,
           "legendFormat": "__auto",
-          "range": true,
+          "range": false,
           "refId": "A",
           "useBackend": false
         }
@@ -1000,7 +1000,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1048,7 +1048,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1070,7 +1070,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1118,7 +1118,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1140,7 +1140,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1196,7 +1196,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1211,7 +1211,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1229,7 +1229,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1244,7 +1244,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1259,7 +1259,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1274,7 +1274,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1293,7 +1293,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1411,7 +1411,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1460,7 +1460,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1482,7 +1482,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1531,7 +1531,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1553,7 +1553,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1602,7 +1602,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1624,7 +1624,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1704,7 +1704,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(quilibrium_unclaimed_balance)",
@@ -1748,8 +1748,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1853,8 +1852,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2074,8 +2072,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2185,7 +2182,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -2204,8 +2201,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2341,8 +2337,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "rgba(50, 172, 45, 0.97)",
-                      "value": null
+                      "color": "rgba(50, 172, 45, 0.97)"
                     },
                     {
                       "color": "rgba(237, 129, 40, 0.89)",
@@ -2390,8 +2385,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "rgba(50, 172, 45, 0.97)",
-                      "value": null
+                      "color": "rgba(50, 172, 45, 0.97)"
                     },
                     {
                       "color": "rgba(237, 129, 40, 0.89)",
@@ -2439,8 +2433,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "rgba(50, 172, 45, 0.97)",
-                      "value": null
+                      "color": "rgba(50, 172, 45, 0.97)"
                     },
                     {
                       "color": "rgba(237, 129, 40, 0.89)",
@@ -2488,8 +2481,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "#32ac2df7",
-                      "value": null
+                      "color": "#32ac2df7"
                     },
                     {
                       "color": "rgba(237, 129, 40, 0.89)",
@@ -2537,8 +2529,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "rgba(50, 172, 45, 0.97)",
-                      "value": null
+                      "color": "rgba(50, 172, 45, 0.97)"
                     },
                     {
                       "color": "#ed8128e3",
@@ -2565,8 +2556,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "#32ac2df7",
-                      "value": null
+                      "color": "#32ac2df7"
                     },
                     {
                       "color": "#ed8128e3",
@@ -2628,10 +2618,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(time() - node_boot_time_seconds{job=\"integrations/quilibrium_exporter\"})by(instance)",
+          "expr": "sum(time() - node_boot_time_seconds{job=\"node\"})by(instance)",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -2642,10 +2632,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "node_uname_info{job=\"integrations/quilibrium_exporter\"} - 0",
+          "expr": "node_uname_info{job=\"node\"} - 0",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -2655,10 +2645,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "node_memory_MemTotal_bytes{job=\"integrations/quilibrium_exporter\"} - 0",
+          "expr": "node_memory_MemTotal_bytes{job=\"node\"} - 0",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -2669,10 +2659,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "count(node_cpu_seconds_total{job=\"integrations/quilibrium_exporter\", mode='system'}) by (instance)",
+          "expr": "count(node_cpu_seconds_total{job=\"node\", mode='system'}) by (instance)",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -2683,10 +2673,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(1 - avg(rate(node_cpu_seconds_total{job=\"integrations/quilibrium_exporter\", mode=\"idle\"}[$interval])) by (instance)) * 100",
+          "expr": "(1 - avg(rate(node_cpu_seconds_total{job=\"node\", mode=\"idle\"}[$interval])) by (instance)) * 100",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -2697,10 +2687,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(1 - (node_memory_MemAvailable_bytes{job=\"integrations/quilibrium_exporter\"} / (node_memory_MemTotal_bytes{job=\"integrations/quilibrium_exporter\"})))* 100",
+          "expr": "(1 - (node_memory_MemAvailable_bytes{job=\"node\"} / (node_memory_MemTotal_bytes{job=\"node\"})))* 100",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -2711,10 +2701,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "max((node_filesystem_size_bytes{job=\"integrations/quilibrium_exporter\",fstype=~\"ext.?|xfs\"}-node_filesystem_free_bytes{job=\"integrations/quilibrium_exporter\",fstype=~\"ext.?|xfs\"}) *100/(node_filesystem_avail_bytes {job=\"integrations/quilibrium_exporter\",fstype=~\"ext.?|xfs\"}+(node_filesystem_size_bytes{job=\"integrations/quilibrium_exporter\",fstype=~\"ext.?|xfs\"}-node_filesystem_free_bytes{job=\"integrations/quilibrium_exporter\",fstype=~\"ext.?|xfs\"})))by(instance)",
+          "expr": "max((node_filesystem_size_bytes{job=\"node\",fstype=~\"ext.?|xfs\"}-node_filesystem_free_bytes{job=\"node\",fstype=~\"ext.?|xfs\"}) *100/(node_filesystem_avail_bytes {job=\"node\",fstype=~\"ext.?|xfs\"}+(node_filesystem_size_bytes{job=\"node\",fstype=~\"ext.?|xfs\"}-node_filesystem_free_bytes{job=\"node\",fstype=~\"ext.?|xfs\"})))by(instance)",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -2725,10 +2715,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "max(rate(node_network_receive_bytes_total{job=\"integrations/quilibrium_exporter\",}[$interval])*8) by (instance)",
+          "expr": "max(rate(node_network_receive_bytes_total{job=\"node\",}[$interval])*8) by (instance)",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -2739,10 +2729,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "max(rate(node_network_transmit_bytes_total{job=\"integrations/quilibrium_exporter\",}[$interval])*8) by (instance)",
+          "expr": "max(rate(node_network_transmit_bytes_total{job=\"node\",}[$interval])*8) by (instance)",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -2753,11 +2743,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "last_over_time(node_hwmon_temp_celsius{job=\"integrations/quilibrium_exporter\",chip=~\"pci0000:00_0000:00:18_3|platform_coretemp_0\",sensor=\"temp1\"}[$interval]) ",
+          "expr": "last_over_time(node_hwmon_temp_celsius{job=\"node\",chip=~\"pci0000:00_0000:00:18_3|platform_coretemp_0\",sensor=\"temp1\"}[$interval]) ",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -2831,7 +2821,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2843,8 +2833,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -2880,7 +2869,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2902,7 +2891,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2914,8 +2903,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -2951,7 +2939,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2999,7 +2987,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3011,8 +2999,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3047,7 +3034,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -3069,7 +3056,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3081,8 +3068,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3117,7 +3103,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -3139,7 +3125,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3151,8 +3137,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3187,7 +3172,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -3209,7 +3194,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3221,8 +3206,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3257,7 +3241,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -3279,7 +3263,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3323,8 +3307,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3359,7 +3342,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "quilibrium_unclaimed_balance{ hostname=\"$node\"}",
@@ -3375,7 +3358,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3387,8 +3370,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -3424,7 +3406,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -3446,7 +3428,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "gridPos": {
         "h": 3,
@@ -3471,7 +3453,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3520,8 +3502,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3553,7 +3534,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "quilibrium_peer_store_count{hostname=\"$node\"}",
@@ -3564,7 +3545,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "quilibrium_network_peer_count{hostname=\"$node\"}",
@@ -3625,8 +3606,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3676,7 +3656,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -3697,8 +3677,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": null
+                "color": "rgba(245, 54, 54, 0.9)"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -3745,7 +3724,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "avg(time() - node_boot_time_seconds{instance=~\"$node\"})",
           "format": "time_series",
@@ -3764,7 +3743,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3788,8 +3767,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "#EAB839",
@@ -3835,7 +3813,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "100 - (avg(rate(node_cpu_seconds_total{instance=~\"$node\",mode=\"idle\"}[$interval])) * 100)",
           "instant": true,
@@ -3846,7 +3824,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "avg(rate(node_cpu_seconds_total{instance=~\"$node\",mode=\"iowait\"}[$interval])) * 100",
           "hide": true,
@@ -3858,7 +3836,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(1 - (node_memory_MemAvailable_bytes{instance=~\"$node\"} / (node_memory_MemTotal_bytes{instance=~\"$node\"})))* 100",
           "instant": true,
@@ -3869,7 +3847,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(node_filesystem_size_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint=\"$maxmount\"}-node_filesystem_free_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint=\"$maxmount\"})*100 /(node_filesystem_avail_bytes {instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint=\"$maxmount\"}+(node_filesystem_size_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint=\"$maxmount\"}-node_filesystem_free_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint=\"$maxmount\"}))",
           "hide": false,
@@ -3881,7 +3859,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(1 - ((node_memory_SwapFree_bytes{instance=~\"$node\"} + 1)/ (node_memory_SwapTotal_bytes{instance=~\"$node\"} + 1))) * 100",
           "instant": true,
@@ -3895,7 +3873,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "In this kanban: the total disk, usage, available, and usage rate are consistent with the values of the Size, Used, Avail, and Use% columns of the df command, and the value of Use% will be rounded to one decimal place, which will be more accurate .\n\nNote: The Use% algorithm in df is: (size-free) * 100 / (avail + (size-free)), the result is divisible by this value, non-divisible by this value is +1, and the unit of the result is %.\nRefer to the df command source code:",
       "fieldConfig": {
@@ -3914,8 +3892,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3953,8 +3930,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "rgba(50, 172, 45, 0.97)",
-                      "value": null
+                      "color": "rgba(50, 172, 45, 0.97)"
                     },
                     {
                       "color": "rgba(237, 129, 40, 0.89)"
@@ -3997,8 +3973,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "rgba(245, 54, 54, 0.9)",
-                      "value": null
+                      "color": "rgba(245, 54, 54, 0.9)"
                     },
                     {
                       "color": "rgba(237, 129, 40, 0.89)",
@@ -4046,8 +4021,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "rgba(50, 172, 45, 0.97)",
-                      "value": null
+                      "color": "rgba(50, 172, 45, 0.97)"
                     },
                     {
                       "color": "rgba(237, 129, 40, 0.89)",
@@ -4160,7 +4134,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_filesystem_size_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-0",
           "format": "table",
@@ -4174,7 +4148,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_filesystem_avail_bytes {instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-0",
           "format": "table",
@@ -4188,7 +4162,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(node_filesystem_size_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-node_filesystem_free_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}) *100/(node_filesystem_avail_bytes {instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}+(node_filesystem_size_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-node_filesystem_free_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}))",
           "format": "table",
@@ -4239,7 +4213,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -4284,8 +4258,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4470,7 +4443,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "increase(node_network_receive_bytes_total{instance=~\"$node\",device=~\"$device\"}[60m])",
           "interval": "60m",
@@ -4484,7 +4457,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "increase(node_network_transmit_bytes_total{instance=~\"$node\",device=~\"$device\"}[60m])",
           "hide": false,
@@ -4501,7 +4474,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -4521,8 +4494,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": null
+                "color": "rgba(245, 54, 54, 0.9)"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -4568,7 +4540,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "count(node_cpu_seconds_total{instance=~\"$node\", mode='system'})",
           "format": "time_series",
@@ -4586,7 +4558,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -4607,8 +4579,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": null
+                "color": "rgba(245, 54, 54, 0.9)"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -4654,7 +4625,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "sum(node_memory_MemTotal_bytes{instance=~\"$node\"})",
           "format": "time_series",
@@ -4672,7 +4643,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -4719,8 +4690,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5017,7 +4987,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "avg(rate(node_cpu_seconds_total{instance=~\"$node\",mode=\"system\"}[$interval])) by (instance) *100",
           "format": "time_series",
@@ -5032,7 +5002,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "avg(rate(node_cpu_seconds_total{instance=~\"$node\",mode=\"user\"}[$interval])) by (instance) *100",
           "format": "time_series",
@@ -5046,7 +5016,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "avg(rate(node_cpu_seconds_total{instance=~\"$node\",mode=\"iowait\"}[$interval])) by (instance) *100",
           "format": "time_series",
@@ -5061,7 +5031,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(1 - avg(rate(node_cpu_seconds_total{instance=~\"$node\",mode=\"idle\"}[$interval])) by (instance))*100",
           "format": "time_series",
@@ -5079,7 +5049,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -5125,8 +5095,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5406,7 +5375,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_memory_MemTotal_bytes{instance=~\"$node\"}",
           "format": "time_series",
@@ -5421,7 +5390,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_memory_MemTotal_bytes{instance=~\"$node\"} - node_memory_MemAvailable_bytes{instance=~\"$node\"}",
           "format": "time_series",
@@ -5435,7 +5404,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_memory_MemAvailable_bytes{instance=~\"$node\"}",
           "format": "time_series",
@@ -5449,7 +5418,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_memory_Buffers_bytes{instance=~\"$node\"}",
           "format": "time_series",
@@ -5463,7 +5432,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_memory_MemFree_bytes{instance=~\"$node\"}",
           "format": "time_series",
@@ -5476,7 +5445,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_memory_Cached_bytes{instance=~\"$node\"}",
           "format": "time_series",
@@ -5489,7 +5458,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_memory_MemTotal_bytes{instance=~\"$node\"} - (node_memory_Cached_bytes{instance=~\"$node\"} + node_memory_Buffers_bytes{instance=~\"$node\"} + node_memory_MemFree_bytes{instance=~\"$node\"})",
           "format": "time_series",
@@ -5500,7 +5469,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(1 - (node_memory_MemAvailable_bytes{instance=~\"$node\"} / (node_memory_MemTotal_bytes{instance=~\"$node\"})))* 100",
           "format": "time_series",
@@ -5517,7 +5486,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -5562,8 +5531,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5688,7 +5656,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "rate(node_network_receive_bytes_total{instance=~'$node',device=~\"$device\"}[$interval])*8",
           "format": "time_series",
@@ -5701,7 +5669,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "rate(node_network_transmit_bytes_total{instance=~'$node',device=~\"$device\"}[$interval])*8",
           "format": "time_series",
@@ -5718,7 +5686,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -5763,8 +5731,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5909,7 +5876,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "node_hwmon_temp_celsius{instance=\"$node\"}",
@@ -5930,7 +5897,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -5975,8 +5942,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -6119,7 +6085,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_load1{instance=~\"$node\"}",
           "format": "time_series",
@@ -6135,7 +6101,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_load5{instance=~\"$node\"}",
           "format": "time_series",
@@ -6149,7 +6115,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_load15{instance=~\"$node\"}",
           "format": "time_series",
@@ -6163,7 +6129,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": " sum(count(node_cpu_seconds_total{instance=~\"$node\", mode='system'}) by (cpu,instance)) by(instance)",
           "format": "time_series",
@@ -6181,7 +6147,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -6229,8 +6195,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -6341,7 +6306,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(node_filesystem_size_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-node_filesystem_free_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}) *100/(node_filesystem_avail_bytes {instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}+(node_filesystem_size_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}-node_filesystem_free_bytes{instance=~'$node',fstype=~\"ext.*|xfs\",mountpoint !~\".*pod.*\"}))",
           "format": "time_series",
@@ -6354,7 +6319,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "node_filesystem_files_free{instance=~'$node',fstype=~\"ext.?|xfs\"} / node_filesystem_files{instance=~'$node',fstype=~\"ext.?|xfs\"}",
           "hide": true,
@@ -6369,7 +6334,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Per second read / write bytes ",
       "fieldConfig": {
@@ -6415,8 +6380,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -6526,7 +6490,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "rate(node_disk_read_bytes_total{instance=~\"$node\"}[$interval])",
           "format": "time_series",
@@ -6539,7 +6503,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "rate(node_disk_written_bytes_total{instance=~\"$node\"}[$interval])",
           "format": "time_series",
@@ -6565,7 +6529,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_VICTORIAMETRICS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(origin_prometheus)",
         "hide": 0,
@@ -6588,7 +6552,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_VICTORIAMETRICS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(node_uname_info{origin_prometheus=~\"$origin_prometheus\"}, job)",
         "hide": 0,
@@ -6611,7 +6575,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_VICTORIAMETRICS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(node_uname_info{origin_prometheus=~\"$origin_prometheus\",job=~\"$job\"}, nodename)",
         "hide": 0,
@@ -6635,7 +6599,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_VICTORIAMETRICS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(node_uname_info{origin_prometheus=~\"$origin_prometheus\",job=~\"$job\",nodename=~\"$hostname\"},instance)",
         "hide": 0,
@@ -6660,7 +6624,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_VICTORIAMETRICS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(node_network_info{origin_prometheus=~\"$origin_prometheus\",device!~'tap.*|veth.*|br.*|docker.*|virbr.*|lo.*|cni.*'},device)",
         "hide": 0,
@@ -6739,7 +6703,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_VICTORIAMETRICS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "query_result(topk(1,sort_desc (max(node_filesystem_size_bytes{origin_prometheus=~\"$origin_prometheus\",instance=~'$node',fstype=~\"ext.?|xfs\",mountpoint!~\".*pods.*\"}) by (mountpoint))))",
         "hide": 2,
@@ -6762,7 +6726,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_VICTORIAMETRICS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(node_uname_info{origin_prometheus=~\"$origin_prometheus\",job=~\"$job\",instance=~\"$node\"}, nodename)",
         "hide": 2,
@@ -6837,7 +6801,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_VICTORIAMETRICS}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(peer_id)",
         "hide": 2,
