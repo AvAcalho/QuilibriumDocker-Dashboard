@@ -3,10 +3,8 @@ Description=Quilibrium Exporter Service
 After=network.target
 
 [Service]
-User=<your_username>
-Group=<your_username>
-WorkingDirectory=/home/<your_username>/quilibrium/exporter
-ExecStart=/home/<your_username>/quilibrium/exporter/venv/bin/python /home/<your_username>/quilibrium/exporter/quilibrium_exporter.py
+Type=Simple
+ExecStart=/<PATH_TO_VENV>/venv/bin/python3 /<PATH_TO_EXPORTER>/quilibrium_exporter.py
 Restart=always
 
 [Install]
