@@ -36,12 +36,7 @@ prometheus.scrape "quilibrium_exporter" {
 
 prometheus.remote_write "grafanacloud" {
   endpoint {
-    url = "<PROMETHEUS_ENDPOINT>"
-
-    basic_auth {
-      username = "<PROMETHEUS_USERNAME>"
-      password = "<PROMETHEUS_PASSWORD>"
-    }
+    url = "http://127.0.0.1:9091"
   }
 }
 
@@ -65,11 +60,6 @@ loki.source.journal "read" {
 
 loki.write "grafanacloud" {
   endpoint {
-    url = "<LOKI_ENDPOINT>"
-
-    basic_auth {
-      username = "<LOKI_USERNAME>"
-      password = "<LOKI_PASSWORD>"
-    }
+    url = "http://127.0.0.1:3100"
   }
 }

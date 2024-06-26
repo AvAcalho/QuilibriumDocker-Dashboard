@@ -4,8 +4,8 @@ import subprocess
 import socket
 import re
 import os
-import platform
 import logging
+import json
 
 from dotenv import load_dotenv # type: ignore
 load_dotenv()
@@ -17,14 +17,19 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Define the working directory
-current_dir = os.path.dirname(os.path.abspath(__file__))
-working_directory = os.getenv("node_path") or f'{current_dir}/../ceremonyclient/node'
+#current_dir = os.path.dirname(os.path.abspath(__file__))
+#working_directory = os.getenv("node_path") or f'{current_dir}/../ceremonyclient/node'
 
 # Systemd name
 service_name= os.getenv("service_name") or 'quilibrium'
 
 # Define the registry
 registry = CollectorRegistry()
+
+# Container Name
+container_name = 'quilibrium'
+
+docker_path = "/usr/bin/docker"
 
 # Define custom metrics
 peer_score_metric = Gauge('quilibrium_peer_score', 'Peer score of the node', ['peer_id', 'hostname'], registry=registry)
@@ -35,50 +40,49 @@ network_peer_count_metric = Gauge('quilibrium_network_peer_count', 'Network peer
 proof_increment_metric = Gauge('quilibrium_proof_increment', 'Proof increment', ['peer_id', 'hostname'], registry=registry)
 proof_time_taken_metric = Gauge('quilibrium_proof_time_taken', 'Proof time taken', ['peer_id', 'hostname'], registry=registry)
 
-# Function to find main node binary
-def find_node_binary():
-    os_type = platform.system().lower()
-    arch = platform.machine()
-    if os_type == "linux":
-        if arch == "aarch64":
-            command = "find . -type f -name '*linux*arm64' | head -n 1"
-        else:
-            command = "find . -type f -name '*linux*amd64' | head -n 1"
-    elif os_type == "darwin":
-        command = "find . -type f -name '*darwin*arm64' | head -n 1"
-    else:
-        return None
 
-    result = result = subprocess.run(command, shell=True, cwd=working_directory, capture_output=True, text=True)
-    file = result.stdout.strip()
-    
-    if result.returncode != 0 or not file:
-        return None
+def is_container_running(container_name):
+    """
+    Check if a Docker container is running.
 
-    return file
+    Args:
+        container_name (str): The name of the Docker container.
 
-# Function to fetch data from command
-def fetch_data_from_node():
+    Returns:
+        bool: True if the container is running, False otherwise.
+    """
     try:
-        node_binary= find_node_binary()
-        if (node_binary is not None):
-            result = subprocess.run([node_binary, '-node-info'], cwd=working_directory, capture_output=True, text=True)
+        # Run the command to check if the container is running
+        output = subprocess.check_output(['docker', 'ps', '-q', '-f', 'name=' + container_name])
+        # If the container is running, the command will return the container ID
+        if output.decode().strip():
+            return True
+        else:
+            return False
+    except subprocess.CalledProcessError:
+        # If the container is not running, the command will raise an error
+        return False
+
+def fetch_data_from_node(container_name):
+    try:
+        if is_container_running(container_name):
+            result = subprocess.run(['docker', 'exec', container_name, 'node', '-node-info'], capture_output=True, text=True)
             output = result.stdout
-            
+
             peer_id_match = re.search(r'Peer ID: (\S+)', output)
             peer_id = peer_id_match.group(1) if peer_id_match else 'unknown'
-            
+
             peer_score_match = re.search(r'Peer Score: (\d+)', output)
             peer_score = float(peer_score_match.group(1)) if peer_score_match else 0
-            
+
             max_frame_match = re.search(r'Max Frame: (\d+)', output)
             max_frame = float(max_frame_match.group(1)) if max_frame_match else 0
-            
+
             unclaimed_balance_match = re.search(r'Unclaimed balance: ([\d\.]+)', output)
             unclaimed_balance = float(unclaimed_balance_match.group(1)) if unclaimed_balance_match else 0
-            
+
             hostname = socket.gethostname()
-            
+
             peer_score_metric.labels(peer_id=peer_id, hostname=hostname).set(peer_score)
             max_frame_metric.labels(peer_id=peer_id, hostname=hostname).set(max_frame)
             unclaimed_balance_metric.labels(peer_id=peer_id, hostname=hostname).set(unclaimed_balance)
@@ -89,18 +93,17 @@ def fetch_data_from_node():
         logger.error(f"Error fetching data from command: {e}")
         return None, None
 
-# Function to fetch data from logs
-def fetch_data_from_logs(peer_id, hostname):
+def fetch_data_from_logs(peer_id, hostname, container_name):
     try:
-        result = subprocess.run(['journalctl', '-u', service_name, '--since', '1 hour ago', '--no-pager'], capture_output=True, text=True)
-        output = result.stdout.splitlines()
+        output = subprocess.run(['docker', 'logs', container_name, '--since=5m'], capture_output=True, text=True)
+        output = output.stderr.splitlines()
 
         peer_store_count = None
         network_peer_count = None
         proof_increment = None
         proof_time_taken = None
 
-        for line in reversed(output):
+        for line in output:
             if peer_store_count is None and 'peers in store' in line:
                 peer_store_count_match = re.search(r'"peer_store_count":(\d+)', line)
                 network_peer_count_match = re.search(r'"network_peer_count":(\d+)', line)
@@ -117,8 +120,7 @@ def fetch_data_from_logs(peer_id, hostname):
                     proof_time_taken = float(proof_time_taken_match.group(1))
                     proof_increment_metric.labels(peer_id=peer_id, hostname=hostname).set(proof_increment)
                     proof_time_taken_metric.labels(peer_id=peer_id, hostname=hostname).set(proof_time_taken)
-            
-            if (peer_store_count is not None and network_peer_count is not None and 
+            if (peer_store_count is not None and network_peer_count is not None and
                 proof_increment is not None and proof_time_taken is not None):
                 break
 
@@ -134,12 +136,12 @@ def metrics():
     network_peer_count_metric.clear()
     proof_increment_metric.clear()
     proof_time_taken_metric.clear()
-    
-    peer_id, hostname = fetch_data_from_node()
+
+    peer_id, hostname = fetch_data_from_node(container_name)
     if peer_id and hostname:
-        fetch_data_from_logs(peer_id, hostname)
+        fetch_data_from_logs(peer_id, hostname, container_name)
     return Response(generate_latest(registry), mimetype='text/plain')
 
 if __name__ == '__main__':
     start_http_server(8000)
-    app.run(host='127.0.0.1', port=5001)
+    app.run(host='0.0.0.0', port=5001)
